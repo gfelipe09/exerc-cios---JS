@@ -1,42 +1,53 @@
-let idade = Number(prompt("Insira a sua idade: "));
-
-if (isNaN(idade)) {
+let quantidade = Number(prompt("Insira a quantidade de alunos na turma: "));
+let qHomens = 0;
+let qMulheres = 0;
+if (isNaN(quantidade)) {
 
     alert("Você não digitou um número!");
 
 }
-
 else {
 
-    if (idade < 12) {
+    for (let i = 0; i < quantidade; i++) {
 
-        alert("Criança!");
+        let resposta = (prompt("Digite [H] para Homens ou [M] para mulheres"));
 
-    }
-    else if (idade < 17) {
+        if (resposta == "H" || resposta == "h") {
 
-        alert("Adolescente!");
+            qHomens = qHomens + 1
 
-    }
-    else if (idade < 21) {
+        }
+        else if (resposta == "M" || resposta == "m") {
 
-        alert("Jovem!");
+            qMulheres = qMulheres + 1
 
-    }
-    else if (idade < 60) {
+        }
+        else {
 
-        alert("Adulto!");
+            alert("Opção Inválida!")
+            i--
 
-    }
-    else if (idade < 99) {
-
-        alert("Idoso!");
+        }
 
     }
-    else if (idade > 99) {
+    if (qHomens == 1 && qMulheres == 1) {
 
-        alert("Hora Extra!");
+        alert(`Na turma há ${quantidade} alunos, com ${qHomens} homem e ${qMulheres} mulher.`,);
 
     }
+    else if (qMulheres == 1) {
 
+        alert(`Na turma há ${quantidade} alunos, com ${qHomens} homens e ${qMulheres} mulher.`,);
+
+    }
+    else if (qHomens == 1) {
+
+        alert(`Na turma há ${quantidade} alunos, com ${qHomens} homem e ${qMulheres} mulheres.`,);
+
+    }
+    else {
+
+        alert(`Na turma há ${quantidade} alunos, com ${qHomens} homens e ${qMulheres} mulheres.`,);
+
+    }
 };
